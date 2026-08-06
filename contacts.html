@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти та зворотній зв'язок | КЗ "Ліцей №4 "Обрій"</title>
+    <meta name="description" content="Контактна інформація шкільного музею КЗ Ліцей №4 Обрій, зворотний зв'язок, замовлення екскурсій.">
+    <meta name="keywords" content="Контакти ліцей 4 Світловодськ, замовити екскурсію музей, Кобильська Ольга Юріївна контакти">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <h1>Музей історії КЗ "Ліцей №4 "Обрій"</h1>
+        <p>м. Світловодськ, Кіровоградська область</p>
+    </div>
+</header>
+
+<nav>
+    <ul class="nav-menu">
+        <li><a href="index.html">Діяльність музею</a></li>
+        <li><a href="history.html">Історія школи</a></li>
+        <li><a href="exhibitions.html">Виставки</a></li>
+        <li><a href="exhibits.html">Експонати</a></li>
+        <li><a href="memories.html">Спогади про школу</a></li>
+        <li><a href="poshuk.html">Клуб "Пошук"</a></li>
+        <li><a href="research.html">Дослідницька робота</a></li>
+        <li><a href="events.html">Участь у заходах</a></li>
+        <li><a href="excursions.html">Екскурсії</a></li>
+        <li><a href="famous-people.html">Відомі люди</a></li>
+        <li class="dropdown">
+            <a href="staff.html">Педагогічний колектив ▾</a>
+            <div class="dropdown-content">
+                <a href="staff.html#directors">Директори школи</a>
+                <a href="staff.html#deputies">Заступники директорів</a>
+                <a href="staff.html#teachers">Учителі початкової та інших галузей</a>
+            </div>
+        </li>
+        <li><a href="contacts.html" class="active">Контакти</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2 class="page-title">Контакти та зворотній зв'язок</h2>
+
+    <div class="info-box">
+        <h3>Контактна інформація:</h3>
+        <p><strong>Навчальний заклад:</strong> КЗ "Ліцей №4 "Обрій" Світловодської міської ради (колишній НВК №4)</p>
+        <p><strong>Адреса музею:</strong> м. Світловодськ, Кіровоградська область, КЗ "Ліцей №4 "Обрій", ауд. №35</p>
+        <p><strong>Керівник музею:</strong> Кобильська Ольга Юріївна (вчитель історії)</p>
+        <p><strong>Телефон для довідок та запису на екскурсії:</strong> 097 *** **</p>
+    </div>
+
+    <h3>Форма зворотного зв'язку</h3>
+    <p>Якщо у вас є збережені старі фотографії школи, спогади або запитання, будь ласка, напишіть нам:</p>
+
+    <div id="status-message" class="success-message" style="display: none;">Лист відправлено</div>
+
+    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/okobilska@gmail.com" method="POST">
+        <label for="name">Ваше ім'я та прізвище:</label>
+        <input type="text" id="name" name="name" placeholder="Іван Іванов" required>
+
+        <label for="email">Ваш Email або телефон:</label>
+        <input type="text" id="email" name="email" placeholder="example@mail.com / +380..." required>
+
+        <label for="status">Хто ви?</label>
+        <input type="text" id="status" name="status" placeholder="Випускник / Учень / Батько / Гость">
+
+        <label for="message">Ваше повідомлення або спогад:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Напишіть ваше повідомлення тут..." required></textarea>
+
+        <button type="submit">Надіслати повідомлення</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2026 Музей КЗ "Ліцей №4 "Обрій" м. Світловодськ. Усі права захищені.</p>
+</footer>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        const statusMessage = document.getElementById('status-message');
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                form.reset(); // Очищення полів форми
+                statusMessage.style.display = 'block'; // Відображення напису
+                
+                // Приховати напис через 10 секунд (10000 мс)
+                setTimeout(() => {
+                    statusMessage.style.display = 'none';
+                }, 10000);
+            } else {
+                alert('Виникла помилка при відправці. Спробуйте пізніше.');
+            }
+        })
+        .catch(error => {
+            alert('Виникла помилка при відправці. Спробуйте пізніше.');
+        });
+    });
+</script>
+
+</body>
+</html>
