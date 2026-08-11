@@ -231,12 +231,51 @@ footer {
     margin-top: 40px;
 }
 
-/* Адаптивність */
+/* Адаптивність для мобільних пристроїв */
 @media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
+    nav {
+        /* Дозволяємо горизонтальне прокручування меню на мобільних */
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
+
+    .nav-menu {
+        /* Залишаємо елементи в один рядок для горизонтального скролу */
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 0 5px;
+    }
+
+    .nav-menu li {
+        flex: 0 0 auto;
+    }
+
+    .nav-menu a {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    /* Налаштування для випадаючого списку на мобільному */
     .dropdown-content {
-        position: static;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        white-space: normal;
+    }
+
+    /* Адаптація відступів контейнера */
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
     }
 }
