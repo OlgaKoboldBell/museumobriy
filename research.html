@@ -8,7 +8,7 @@
     <meta name="keywords" content="Край в якому я живу, Кобильська Марина, Шрамко Єлизавета, Єднєв Єгор, Руденко Діана, Куруківська битва, Меморіал слави Світловодськ, МАН Світловодськ, наукові роботи ліцей 4">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Стилі для розташування перших двох фотографій в один рядок (поруч) */
+        /* Стилі для розташування фотографій у рядок */
         .horizontal-photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -16,7 +16,7 @@
             margin: 20px 0;
         }
 
-        /* Збільшуємо висоту перших двох фотографій у 1.5 раза (720px) */
+        /* Висота перших двох пар фотографій */
         .horizontal-photo-grid .photo-card img {
             width: 100%;
             height: 720px;
@@ -28,6 +28,38 @@
             width: 100%;
             height: 480px;
             object-fit: cover;
+        }
+
+        /* Стиль кнопки для перегляду дослідницької роботи */
+        .btn-read {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-read:hover {
+            background-color: #004085;
+        }
+
+        /* Медіа-запити для мобільних пристроїв */
+        @media (max-width: 768px) {
+            .horizontal-photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .horizontal-photo-grid .photo-card img {
+                height: 380px;
+            }
+
+            .photo-grid .photo-card img {
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -77,6 +109,7 @@
         <p><strong>Виконавець:</strong> Руденко Діана, учениця 11-Б класу КЗ «Ліцей №4 "Обрій"»</p>
         <p><strong>Науковий керівник:</strong> Кобильська Ольга Юріївна</p>
         <p><strong>Короткий виклад:</strong> Дослідження присвячене вивченню історії меморіального знака у Світловодську, присвяченого подіям Куруківської битви 1625 року між козаками (під проводом Марка Жмайла) та польським військом. У ході роботи проаналізовано історичні джерела та картографічні матеріали, з'ясовано локацію подій та зв'язок Світловодська з колишнім Криловом і спадкоємністю історичної пам’яті, а також розглянуто стан пам’ятної стели та перспективи її популяризації.</p>
+        <a href="https://docs.google.com/document/d/1yo7oncrIUJLBatMhtw7a3DcP4lifOgZk/edit?usp=sharing&ouid=116846422471828837530&rtpof=true&sd=true" target="_blank" class="btn-read">📖 Переглянути дослідницьку роботу</a>
     </div>
 
     <!-- Фотографії нового дослідження research_foto_7 та research_foto_8 -->
@@ -99,6 +132,7 @@
         <p><strong>Виконавець:</strong> Єднєв Єгор, учень 11-Б класу КЗ «Ліцей №4 "Обрій"»</p>
         <p><strong>Науковий керівник:</strong> Кобильська Ольга Юріївна</p>
         <p><strong>Короткий виклад:</strong> Дослідження присвячене історії спорудження Меморіалу Слави у Світловодську (1967 рік) та розвінчанню міфів щодо датування на обеліску. У ході роботи вивчено архівні матеріали міського краєзнавчого музею та центральної бібліотеки, проаналізовано зміст капсули часу, відкритої у 2017 році, а також досліджено символічне значення артоб’єктів та встановлення сучасного меморіалу «Крила надії».</p>
+        <a href="https://docs.google.com/document/d/1WYWHD33FysmsvUDpta2Eia3dfdkNpgzl/edit?usp=sharing&ouid=116846422471828837530&rtpof=true&sd=true" target="_blank" class="btn-read">📖 Переглянути дослідницьку роботу</a>
     </div>
 
     <!-- Фотографії нового дослідження research_foto_5 та research_foto_6 -->
